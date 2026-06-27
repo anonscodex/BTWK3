@@ -12,6 +12,12 @@ app.get('/todos', (req, res) => {
   res.status(200).json(todos); // Send array as JSON
 });
 
+//GET by Id
+app.get('/todos/:id', (req,res) => {
+  const singleTodo = req.params.id
+  res.status(200).json(singleTodo)
+})
+
 // POST New – Create
 app.post('/todos', (req, res) => {
   const newTodo = { id: todos.length + 1, ...req.body }; // Auto-ID
