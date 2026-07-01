@@ -7,7 +7,9 @@ let todos = [
   { id: 2, task: 'Build CRUD API', completed: false },
   {id:3, task: "sleep", completed: true}
 ];
-
+app.get('/', (req,res) => {
+  res.send('Welcome to my backend');
+})
 // GET All – Read
 app.get('/todos', (req, res) => {
   res.status(200).json(todos); // Send array as JSON
